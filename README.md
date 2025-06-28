@@ -1,12 +1,12 @@
 # Motor Cooling System Design
-1. Objective and Context
+# Objective and Context
 The project aimed to design an efficient thermal management system for a Formula Student Electric Vehicle (FSEV) integrating an EMRAX 208 in-wheel motor and a BAMOCAR-D3 motor control unit. These components are known to generate substantial heat under high-load dynamic driving conditions, with peak dissipation reaching up to 10 kW. The challenge was to ensure that both the motor and controller operated within a specified temperature limit of 45°C to maintain optimal performance, prevent thermal degradation, and extend component lifespan — a constraint specified by the design problem.
 
-2. System Architecture
+# System Architecture
 To address this, a single-loop liquid cooling system was developed, using water as the working fluid for its high thermal conductivity and availability. The cooling circuit consisted of a radiator, pump, fan, and reservoir, with careful attention given to component sizing and placement to maximize heat dissipation while minimizing power draw. The radiator and fan were selected to handle transient thermal loads, while the pump ensured steady coolant circulation. The entire system was modeled using Simscape blocks in MATLAB/Simulink to simulate physical behavior under varying driving conditions.
 
-3. Control Strategy
+# Control Strategy
 To ensure precise and responsive thermal management, a hybrid control strategy was implemented using Simulink. The pump flow rate was regulated using a lookup table based on motor temperature, enabling efficient stepwise coolant circulation without continuous computation. Meanwhile, the fan speed was controlled using a tuned PID controller to dynamically respond to rapid temperature fluctuations and maintain thermal stability. This combination offered a balance between the simplicity and predictability of lookup tables and the responsiveness of PID control. The dual strategy ensured optimal cooling while minimizing unnecessary energy consumption, especially under varying drive conditions.
 
-4. Validation and Results
+# Validation and Results
 Thermal performance of the system was validated through simulation by analyzing temperature response and cooling dynamics during representative drive cycles. The control logic was tested under peak heat load conditions, and results showed that the motor temperature remained within the target range throughout the cycle. Importantly, the lookup table strategy achieved up to 22% power savings compared to constant-speed cooling operation. These results demonstrate the system's potential for use in high-performance EV applications, offering a balance between thermal safety, energy efficiency, and design simplicity.
